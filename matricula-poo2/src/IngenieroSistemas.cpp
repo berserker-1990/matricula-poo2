@@ -9,9 +9,10 @@ class IngenieroSistemas : virtual public Persona { // @suppress("Class has a vir
 	public:
 	//constructores
 		virtual IngenieroSistemas();
-		virtual IngenieroSistemas(string nroColegiado){
-			numeroColegiado= nroColegiado;
-		};
+		virtual IngenieroSistemas(string nroColegiado)
+			{
+				numeroColegiado= nroColegiado;
+			};
 	//Métodos get y set
 		string getNumeroColegiado() {
 			return numeroColegiado;
