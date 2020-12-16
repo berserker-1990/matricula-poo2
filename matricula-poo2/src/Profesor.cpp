@@ -1,16 +1,16 @@
 #include <string>
 using namespace std;
-#include "Persona.cpp"
+#include "Persona.cpp";
 
-class Profesor : public Persona { // @suppress("Class has a virtual method and non-virtual destructor")
+class Profesor : virtual public Persona { // @suppress("Class has a virtual method and non-virtual destructor")
 	private:
 	string numeroEmpleado;
 	float sueldo = 0.0;
 
 	public:
 	//constructores
-		Profesor();
-		Profesor(string nroEmpleado, float s){
+		virtual Profesor();
+		virtual Profesor(string nroEmpleado, float s){
 			numeroEmpleado = nroEmpleado;
 			sueldo = s;
 		};
@@ -32,7 +32,11 @@ class Profesor : public Persona { // @suppress("Class has a virtual method and n
 		}
 
 		//Implementando el método de la clase absgtracta
-		string saludar(string nombre){
+		virtual string toString(){
+			return "Identidad: " + identidad + "\nNombre: " + nombre + " " + apellido + "\nNro empleado: " + numeroEmpleado;
+		}
+
+		virtual string saludar(string nombre){
 			return "Hola soy el profesor: " + nombre;
 		}
 };

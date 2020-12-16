@@ -1,15 +1,15 @@
 #include <string>
 using namespace std;
-#include "Persona.cpp"
+#include "Persona.cpp";
 
-class IngenieroSistemas : public Persona { // @suppress("Class has a virtual method and non-virtual destructor")
+class IngenieroSistemas : virtual public Persona { // @suppress("Class has a virtual method and non-virtual destructor")
 	private:
 	string numeroColegiado;
 
 	public:
 	//constructores
-		IngenieroSistemas();
-		IngenieroSistemas(string nroColegiado){
+		virtual IngenieroSistemas();
+		virtual IngenieroSistemas(string nroColegiado){
 			numeroColegiado= nroColegiado;
 		};
 	//Métodos get y set
@@ -22,7 +22,11 @@ class IngenieroSistemas : public Persona { // @suppress("Class has a virtual met
 		}
 
 		//Implementando el método de la clase absgtracta
-		string saludar(string nombre){
+		virtual string toString(){
+			return "Identidad: " + identidad + "\nNombre: " + nombre + " " + apellido + "\nNro colegiado: " + numeroColegiado;
+		}
+
+		virtual string saludar(string nombre){
 			return "Hola soy el ingeniero " + nombre;
 		}
 };

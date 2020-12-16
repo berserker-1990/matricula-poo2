@@ -8,35 +8,37 @@ class Persona{ // @suppress("Class has a virtual method and non-virtual destruct
 		string apellido;
 
 		//Método virtual para la clase abstracta Persona
+		virtual string toString() = 0;
 		virtual string saludar(string nombre) = 0;
 
 	public:
 		//COnstructores
-		Persona();
-		Persona (string id, string name, string ap){
+		virtual Persona();
+		virtual Persona (string id, string name, string ap){
 			identidad = id;
 			nombre = name;
 			apellido = ap;
 		};
 
 		//Métodos get y set
-		string getIdentidad() {
+		virtual string getIdentidad() {
 			return identidad;
 		};
 
-		void setIdentidad(string id) {
+		virtual void setIdentidad(string id) {
 			identidad = id;
 		}
 
-		string getNombre() {
+		virtual string getNombre() {
 			return nombre;
 		}
-		void setNombre(string name) {
+
+		virtual void setNombre(string name) {
 			nombre = name;
 		}
 
-		string getApellido() {
-			return apellido;
+		virtual string getApellido() {
+		 	return apellido;
 		}
 
 		void setApellido(string ap) {
