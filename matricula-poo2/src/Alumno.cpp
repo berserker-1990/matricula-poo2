@@ -28,7 +28,7 @@ class Alumno : virtual public Persona { // @suppress("Class has a virtual method
 		}
 
 		virtual string saludar(string nombre){
-			return "Hola soy el ingeniero " + nombre;
+			return "Hola soy el alumno " + nombre;
 		}
 };
 
